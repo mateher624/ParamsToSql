@@ -1,0 +1,21 @@
+<div class="card">
+  <h1>Parameter to SQL Translator</h1>
+  <div class="container">
+    <div class="textarea-container">
+      <h3>Input Parameters</h3>
+      <textarea
+        [(ngModel)]="inputText"
+        (input)="translateInput()"
+        placeholder="Enter parameters here..."
+        rows="10"
+      ></textarea>
+      <button (click)="copyToClipboard(inputText)">Copy Input</button>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </div>
+    <div class="textarea-container">
+      <h3>SQL Query Parameters</h3>
+      <textarea [value]="outputText" readonly rows="10"></textarea>
+      <button (click)="copyToClipboard(outputText)">Copy Output</button>
+    </div>
+  </div>
+</div>
